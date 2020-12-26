@@ -1,6 +1,5 @@
 #!/bin/bash
-if [ ! -e sysctl.config ];
-then
+if [ ! -e sysctl.config ]; then
     echo "net.ipv4.tcp_max_syn_backlog = 4096\n
     net.ipv4.tcp_synack_retries = 1\n
     net.ipv4.tcp_fin_timeout = 10\n

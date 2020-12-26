@@ -16,7 +16,7 @@ while read sub; do
         echo "$sub.$domain"
     fi
     if [ "$cname_seach"=true ]; then
-        cname=$(host -t CNAME $sub.$dpmain | grep 'an alias' | awk '{print $NF}')
+        cname=$(host -t CNAME $sub.$domain | grep 'an alias' | awk '{print $NF}')
         if [ -z "$cname" ]; then
             continue
         fi

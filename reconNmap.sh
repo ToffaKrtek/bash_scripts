@@ -8,8 +8,7 @@ printf "\n----- NMAP -----\n\n" > results
 echo "Running Nmap..."
 nmap $1 | tail -n +5 | head -n -3 >> results
 
-while read line
-do
+while read line; do
     if [[ $line == *open* ]] && [[ $line == *http* ]]
     then
         echo "Running WhatWeb.."
@@ -17,8 +16,7 @@ do
     fi
 done < results
 
-if [ -e temp ]
-then
+if [ -e temp ]; then
     printf "\n---- WEB ----\n\n" >> results
     cat temp >> results
     rm temp
